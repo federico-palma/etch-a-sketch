@@ -1,3 +1,4 @@
+// Grid creation and setting of event listener.
 let gridContainer = document.getElementById('grid-container');
 
 let gridDefinition = 64
@@ -10,8 +11,16 @@ for (let i = 0; i < (gridDefinition * gridDefinition); i++) {
     newCell.addEventListener('mouseover', changeColor);
     gridContainer.appendChild(newCell);
 };
+let gridCells = document.getElementsByClassName('grid-cell')
 
 function changeColor() {
-    event.target.style.backgroundColor = 'black';
+    this.style.backgroundColor = 'black';
 }
 
+// Clear button
+let clearBtn = document.getElementById('btn-clear');
+clearBtn.addEventListener('click', () => {
+    for (let i = 0; i < gridCells.length; i++) {
+        gridCells[i].style.backgroundColor = 'white';
+    }
+});
