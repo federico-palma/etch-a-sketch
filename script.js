@@ -1,8 +1,17 @@
 // Grid creation.
 let gridContainer = document.getElementById('grid-container');
 
-let gridDefinition = 64
-let gridCells = document.getElementsByClassName('grid-cell')
+let gridCells = document.getElementsByClassName('grid-cell');
+
+// Grid definition slider function.
+let gridDefSlider = document.getElementById('grid-def-slider');
+let gridDefinition = gridDefSlider.value;
+gridDefSlider.addEventListener('change', () => {
+    clearGrid();
+    gridDefinition = gridDefSlider.value;
+    setGrid();
+    console.log(gridDefSlider.value)
+})
 
 // Function sets the grid according to the Grid Definition chosen and adds event listener to grid cells.
 function setGrid() {
@@ -17,7 +26,9 @@ function setGrid() {
     };
 };
 
+// Set initial grid. 
 setGrid();
+
 function changeColor() {
     this.style.backgroundColor = 'black';
 };
