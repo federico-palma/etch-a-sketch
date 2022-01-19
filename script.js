@@ -31,6 +31,7 @@ setGrid();
 let colorPicker = document.getElementById('colorPicker');
 let colorModeBtn = document.getElementById('btn-color-mode');
 let rainbowModeBtn = document.getElementById('btn-rainbow-mode');
+let grayscaleModeBtn = document.getElementById('btn-grayscale-mode');
 let eraserModeBtn = document.getElementById('btn-eraser-mode');
 let currentColorMode = 'Color';
 let btnList = document.getElementsByClassName('btn-mode');
@@ -60,6 +61,20 @@ function changeColor() {
             this.style.backgroundColor = getRandomColor();
             break;
 
+        case 'Grayscale':
+            if (this.style.backgroundColor == 'rgb(200, 200, 200)') {
+                this.style.backgroundColor = 'rgb(150, 150, 150)';
+            } else if (this.style.backgroundColor == 'rgb(150, 150, 150)') {
+                this.style.backgroundColor = 'rgb(100, 100, 100)';
+            } else if (this.style.backgroundColor == 'rgb(100, 100, 100)') {
+                this.style.backgroundColor = 'rgb(50, 50, 50)';
+            } else if (this.style.backgroundColor == 'rgb(50, 50, 50)'){
+                this.style.backgroundColor = 'rgb(0,0,0)';
+            } else {
+                this.style.backgroundColor = 'rgb(200, 200, 200)';
+            }
+            break;
+
         case 'Eraser':
             this.style.backgroundColor = '#ffffff';
             break;
@@ -76,7 +91,7 @@ function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-  }
+}
 
 // Clear function and button.
 function clearGrid() {
