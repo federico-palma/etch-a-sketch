@@ -14,3 +14,17 @@
     height: 100%;
 }
 
+#settings {
+    display: grid;
+    width: 200px;
+    float: left;
+}
+
+#color-picker-div {
+    display: grid;
+}
+
+.btn-active{
+    background-color: rgb(63, 56, 134);
+    color: white;
+}
