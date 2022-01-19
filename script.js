@@ -32,13 +32,14 @@ let colorPicker = document.getElementById('colorPicker');
 let colorModeBtn = document.getElementById('btn-color-mode');
 let rainbowModeBtn = document.getElementById('btn-rainbow-mode');
 let eraserModeBtn = document.getElementById('btn-eraser-mode');
-let currentColorMode
+let currentColorMode = 'Color';
 let btnList = document.getElementsByClassName('btn-mode');
 
 for (let i = 0; i < btnList.length; i++) {
     btnList[i].addEventListener('click', () => {
         removeBtnClass()
         btnList[i].classList.add('btn-active');
+        currentColorMode = btnList[i].textContent;
     });
 }
 
@@ -50,8 +51,32 @@ function removeBtnClass() {
 
 // Function changes grid cell color.
 function changeColor() {
-    this.style.backgroundColor = 'black';
+    switch (currentColorMode) {
+        case 'Color':
+            this.style.backgroundColor = colorPicker.value;
+            break;
+
+        case 'Rainbow':
+            this.style.backgroundColor = getRandomColor();
+            break;
+
+        case 'Eraser':
+            this.style.backgroundColor = '#ffffff';
+            break;
+                
+        default:
+            break;
+    }    
 };
+
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 // Clear function and button.
 function clearGrid() {
