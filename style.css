@@ -1,14 +1,34 @@
+* {
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: rgb(255, 217, 0);
+}
+
 #main {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
     margin-top: 50px;
-    border: solid 5px black;
+    border: solid 3px black;
+    box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     width: 80%;
     padding: 15px;
+    background-color: #ee1f1fe7;
 }
+
+ #title {
+     position: absolute;
+     left: 15px;
+     top: 35px;
+     transform: rotate(-25deg);
+     color: rgb(224, 191, 0);
+     font-size: 2.5rem;
+ }
 
 /* Grid */
 #grid-container {
@@ -19,6 +39,7 @@
     border-radius: 5px;
     display: grid;
     padding: 3px;
+    background-color: #ffffff;
 }
 
 .grid-cell {
@@ -51,12 +72,16 @@ input[type="color"]::-webkit-color-swatch {
 
 .btn-mode {
     width: 90%;
-    height: 30px;
+    height: 40px;
     margin: 5px;
+    background-color: #f1f1f1;
+    border: 1px black solid;
+    border-radius: 10px;
+    font-size: 1.3rem;
 }
 
 .btn-active{
-    background-color: rgb(63, 56, 134);
+    background-color: rgb(33, 30, 224);
     color: #ffffff;
 }
 
@@ -66,25 +91,37 @@ input[type="color"]::-webkit-color-swatch {
     margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #slider-div {
     width: 100%;
+    font-size: 1.2rem;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 #grid-def-slider {
     width: 100%;
     height: 30px;
     margin: 5px;
+    color: black;
 }
 
 #btn-clear {
     width: 90%;
-    height: 30px;
+    height: 40px;
+    font-size: 1.3rem;
     margin: 5px;
     margin-top: 10px;
+    background-color: #f1f1f1;
+    border: 1px black solid;
+    border-radius: 10px;
 }
