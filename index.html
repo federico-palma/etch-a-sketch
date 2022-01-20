@@ -9,20 +9,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="settings">
-            <button id="btn-clear">Clear Board</button>
-            <label for="grid-def-slider">Set Grid Definition:</label>
-            <input name="grid-def-slider" type="range" id="grid-def-slider" min="16" max="100">
-            <div id="color-picker-div">
+        <main id="main">
+            <div id="color-settings">
                 <input type="color" id="colorPicker" value="#000000">
                 <button class="btn-mode btn-active" id="btn-color-mode">Color</button>
                 <button class="btn-mode" id="btn-rainbow-mode">Rainbow</button>
                 <button class="btn-mode" id="btn-grayscale-mode">Grayscale</button>
                 <button class="btn-mode" id="btn-eraser-mode">Eraser</button>
             </div>
-        </div>
 
-        <div id="grid-container"></div>
+            <div id="grid-container"></div>
+
+            <div id="settings">
+                <div id="slider-div">
+                    <label for="grid-def-slider">Set Grid Definition:</label>
+                    <input name="grid-def-slider" type="range" id="grid-def-slider" min="16" max="100">
+                </div>
+                <button id="btn-clear">Clear Board</button>
+            </div>
+        </main>  
 
         <script src="script.js"></script>
     </body>

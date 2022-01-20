@@ -1,3 +1,15 @@
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: solid 5px black;
+    border-radius: 10px;
+    width: 80%;
+    padding: 15px;
+}
+
+/* Grid */
 #grid-container {
     margin: auto;
     width: 550px;
@@ -14,17 +26,64 @@
     height: 100%;
 }
 
-#settings {
-    display: grid;
-    width: 200px;
-    float: left;
+/* Color Settings */
+#color-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    margin: auto;
 }
 
-#color-picker-div {
-    display: grid;
+#colorPicker {
+    margin: 10px;
+    background-color: transparent;
+    border: 2px black solid;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border-radius: 50%;
+}
+
+.btn-mode {
+    width: 90%;
+    height: 30px;
+    margin: 5px;
 }
 
 .btn-active{
     background-color: rgb(63, 56, 134);
     color: #ffffff;
+}
+
+/* Grid Settings */
+#settings {
+    width: 15%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#slider-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-def-slider {
+    width: 100%;
+    height: 30px;
+    margin: 5px;
+}
+
+#btn-clear {
+    width: 90%;
+    height: 30px;
+    margin: 5px;
+    margin-top: 10px;
 }
