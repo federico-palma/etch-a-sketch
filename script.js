@@ -62,19 +62,7 @@ function changeColor() {
             break;
 
         case 'Grayscale':
-            if (this.style.backgroundColor == 'rgb(200, 200, 200)') {
-                this.style.backgroundColor = 'rgb(150, 150, 150)';
-            } else if (this.style.backgroundColor == 'rgb(150, 150, 150)') {
-                this.style.backgroundColor = 'rgb(100, 100, 100)';
-            } else if (this.style.backgroundColor == 'rgb(100, 100, 100)') {
-                this.style.backgroundColor = 'rgb(50, 50, 50)';
-            } else if (this.style.backgroundColor == 'rgb(50, 50, 50)'){
-                this.style.backgroundColor = 'rgb(0, 0, 0)';
-            } else if (this.style.backgroundColor == 'rgb(0, 0, 0)'){
-                this.style.backgroundColor = 'rgb(0, 0, 0)';
-            } else {
-                this.style.backgroundColor = 'rgb(200, 200, 200)';
-            }
+            this.style.backgroundColor = greyscaleFunction(this);
             break;
 
         case 'Eraser':
@@ -93,6 +81,22 @@ function getRandomColor() {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+function greyscaleFunction(currentCell) {
+    if (currentCell.style.backgroundColor == 'rgb(200, 200, 200)') {
+        return 'rgb(150, 150, 150)';
+    } else if (currentCell.style.backgroundColor == 'rgb(150, 150, 150)') {
+        return 'rgb(100, 100, 100)';
+    } else if (currentCell.style.backgroundColor == 'rgb(100, 100, 100)') {
+        return 'rgb(50, 50, 50)';
+    } else if (currentCell.style.backgroundColor == 'rgb(50, 50, 50)'){
+        return 'rgb(0, 0, 0)';
+    } else if (currentCell.style.backgroundColor == 'rgb(0, 0, 0)'){
+        return 'rgb(0, 0, 0)';
+    } else {
+        return 'rgb(200, 200, 200)';
+    }
 }
 
 // Clear function and button.
