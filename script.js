@@ -34,19 +34,19 @@ let rainbowModeBtn = document.getElementById('btn-rainbow-mode');
 let grayscaleModeBtn = document.getElementById('btn-grayscale-mode');
 let eraserModeBtn = document.getElementById('btn-eraser-mode');
 let currentColorMode = 'Color';
-let btnList = document.getElementsByClassName('btn-mode');
+let btnModeList = document.getElementsByClassName('btn-mode');
 
-for (let i = 0; i < btnList.length; i++) {
-    btnList[i].addEventListener('click', () => {
+for (let i = 0; i < btnModeList.length; i++) {
+    btnModeList[i].addEventListener('click', () => {
         removeBtnClass()
-        btnList[i].classList.add('btn-active');
-        currentColorMode = btnList[i].textContent;
+        btnModeList[i].classList.add('btn-active');
+        currentColorMode = btnModeList[i].textContent;
     });
 }
 
 function removeBtnClass() {
-    for (let i = 0; i < btnList.length; i++) {
-        btnList[i].classList.remove('btn-active');
+    for (let i = 0; i < btnModeList.length; i++) {
+        btnModeList[i].classList.remove('btn-active');
     }
 }
 
