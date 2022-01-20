@@ -69,7 +69,9 @@ function changeColor() {
             } else if (this.style.backgroundColor == 'rgb(100, 100, 100)') {
                 this.style.backgroundColor = 'rgb(50, 50, 50)';
             } else if (this.style.backgroundColor == 'rgb(50, 50, 50)'){
-                this.style.backgroundColor = 'rgb(0,0,0)';
+                this.style.backgroundColor = 'rgb(0, 0, 0)';
+            } else if (this.style.backgroundColor == 'rgb(0, 0, 0)'){
+                this.style.backgroundColor = 'rgb(0, 0, 0)';
             } else {
                 this.style.backgroundColor = 'rgb(200, 200, 200)';
             }
