@@ -30,16 +30,22 @@ body {
      font-size: 2.5rem;
  }
 
-/* Grid */
-#grid-container {
+/* Screen and Grid */
+#screen {
     margin: auto;
     width: 550px;
     height: 550px;
     border: 3px black solid;
     border-radius: 5px;
-    display: grid;
     padding: 3px;
     background-color: #ffffff;
+}
+
+#grid-container {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: grid;
 }
 
 .grid-cell {
@@ -125,3 +131,32 @@ input[type="color"]::-webkit-color-swatch {
     border: 1px black solid;
     border-radius: 10px;
 }
+
+/* Shake animation */
+
+.shake-anim {
+    animation: shake 1.5s ease-out 0s 1;
+  }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(-1deg); }
+  }
+
+  .fadeOut-anim {
+    animation: fadeOut 1.5s ease-out 0s 1;
+  }
+
+  @keyframes fadeOut{
+      0% {opacity: 1;}
+      100% {opacity: 0;}
+  }

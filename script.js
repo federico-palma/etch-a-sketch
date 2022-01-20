@@ -1,4 +1,5 @@
-// Grid creation.
+let mainSection = document.getElementById('main');
+let screen = document.getElementById('screen');
 let gridContainer = document.getElementById('grid-container');
 let gridCells = document.getElementsByClassName('grid-cell');
 
@@ -6,7 +7,7 @@ let gridCells = document.getElementsByClassName('grid-cell');
 let gridDefSlider = document.getElementById('grid-def-slider');
 let gridDefinition = gridDefSlider.value;
 gridDefSlider.addEventListener('change', () => {
-    clearGrid();
+    gridContainer.textContent = '';
     gridDefinition = gridDefSlider.value;
     setGrid();
 })
@@ -99,11 +100,25 @@ function greyscaleFunction(currentCell) {
     }
 }
 
-// Clear function and button.
+// Clear and shake function.
 function clearGrid() {
     for (let i = 0; i < gridCells.length; i++) {
         gridCells[i].style.backgroundColor = 'white';
     }
 }
+
+function shakeFunction() {
+    mainSection.classList.add('shake-anim');
+    gridContainer.classList.add('fadeOut-anim');
+    
+    setTimeout(() => {
+        mainSection.classList.remove('shake-anim');
+        gridContainer.classList.remove('fadeOut-anim');
+        clearGrid();
+    }, 1500);       
+}
+
 let clearBtn = document.getElementById('btn-clear');
-clearBtn.addEventListener('click', clearGrid);
+clearBtn.addEventListener('click', () => {
+    shakeFunction()
+});
