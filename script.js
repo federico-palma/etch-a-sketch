@@ -110,12 +110,14 @@ function clearGrid() {
 function shakeFunction() {
     mainSection.classList.add('shake-anim');
     gridContainer.classList.add('fadeOut-anim');
+    clearBtn.disabled = true
     
     setTimeout(() => {
         mainSection.classList.remove('shake-anim');
         gridContainer.classList.remove('fadeOut-anim');
         clearGrid();
-    }, 1500);       
+        clearBtn.disabled = false
+    }, 1400);       
 }
 
 let clearBtn = document.getElementById('btn-clear');
